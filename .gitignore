@@ -2,5 +2,5 @@
 *.JPG
 *.png
 *~
-/imagenes
-/mib
+*.html
+imagenes/*

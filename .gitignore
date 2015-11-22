@@ -1,6 +1,5 @@
+*.html
 *.jpg
 *.JPG
 *.png
 *~
-*.html
-imagenes/*

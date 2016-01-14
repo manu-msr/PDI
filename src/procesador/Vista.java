@@ -1,6 +1,5 @@
 package procesador;
 
-import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -99,12 +98,17 @@ public class Vista extends javax.swing.JFrame {
         recursivas = new javax.swing.JMenuItem();
         sopaLetras = new javax.swing.JMenuItem();
         hombresNegro = new javax.swing.JMenuItem();
+        recurwsc = new javax.swing.JMenuItem();
+        fotomosaicos = new javax.swing.JMenuItem();
         menu_contrastes = new javax.swing.JMenu();
         inverso = new javax.swing.JMenuItem();
         altoContraste = new javax.swing.JMenuItem();
         semitonos = new javax.swing.JMenuItem();
         menu_artisticos = new javax.swing.JMenu();
         att = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        oleobn = new javax.swing.JMenuItem();
+        oleocolor = new javax.swing.JMenuItem();
         menu_combinar = new javax.swing.JMenu();
         blending = new javax.swing.JMenuItem();
         menu_iconos = new javax.swing.JMenu();
@@ -114,7 +118,21 @@ public class Vista extends javax.swing.JFrame {
         marcaAgua = new javax.swing.JMenuItem();
         menu_rotar = new javax.swing.JMenu();
         rotar = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        rotamat = new javax.swing.JMenuItem();
+        reduccion = new javax.swing.JMenuItem();
+        ampliacion = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        borde = new javax.swing.JMenuItem();
+        sharpen = new javax.swing.JMenuItem();
+        blur = new javax.swing.JMenuItem();
+        motionblur = new javax.swing.JMenuItem();
+        promedio = new javax.swing.JMenuItem();
+        media = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        losseless = new javax.swing.JMenuItem();
+        lossy = new javax.swing.JMenuItem();
+        descompresión = new javax.swing.JMenuItem();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -320,6 +338,22 @@ public class Vista extends javax.swing.JFrame {
         });
         menu_mosaicos.add(hombresNegro);
 
+        recurwsc.setText("Imágenes Recursiva (Web Safe Color)");
+        recurwsc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recurwscActionPerformed(evt);
+            }
+        });
+        menu_mosaicos.add(recurwsc);
+
+        fotomosaicos.setText("Fotomosaicos");
+        fotomosaicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fotomosaicosActionPerformed(evt);
+            }
+        });
+        menu_mosaicos.add(fotomosaicos);
+
         jMenuBar2.add(menu_mosaicos);
 
         menu_contrastes.setText("Contrastes");
@@ -359,6 +393,26 @@ public class Vista extends javax.swing.JFrame {
             }
         });
         menu_artisticos.add(att);
+
+        jMenu5.setText("Oleo");
+
+        oleobn.setText("Grises");
+        oleobn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oleobnActionPerformed(evt);
+            }
+        });
+        jMenu5.add(oleobn);
+
+        oleocolor.setText("Color");
+        oleocolor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oleocolorActionPerformed(evt);
+            }
+        });
+        jMenu5.add(oleocolor);
+
+        menu_artisticos.add(jMenu5);
 
         jMenuBar2.add(menu_artisticos);
 
@@ -401,7 +455,7 @@ public class Vista extends javax.swing.JFrame {
 
         jMenuBar2.add(menu_marcaAgua);
 
-        menu_rotar.setText("Rotar");
+        menu_rotar.setText("Modificar");
 
         rotar.setText("Filtro Rotar Imagen");
         rotar.addActionListener(new java.awt.event.ActionListener() {
@@ -411,10 +465,115 @@ public class Vista extends javax.swing.JFrame {
         });
         menu_rotar.add(rotar);
 
-        jMenuItem2.setText("Rotar con Matriz");
-        menu_rotar.add(jMenuItem2);
+        rotamat.setText("Rotar con Matriz");
+        rotamat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rotamatActionPerformed(evt);
+            }
+        });
+        menu_rotar.add(rotamat);
+
+        reduccion.setText("Reducción");
+        reduccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reduccionActionPerformed(evt);
+            }
+        });
+        menu_rotar.add(reduccion);
+
+        ampliacion.setText("Aplicación");
+        ampliacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ampliacionActionPerformed(evt);
+            }
+        });
+        menu_rotar.add(ampliacion);
 
         jMenuBar2.add(menu_rotar);
+
+        jMenu4.setText("Convolución");
+
+        borde.setText("Borde");
+        borde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bordeActionPerformed(evt);
+            }
+        });
+        jMenu4.add(borde);
+
+        sharpen.setText("Sharpen");
+        sharpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sharpenActionPerformed(evt);
+            }
+        });
+        jMenu4.add(sharpen);
+
+        blur.setText("Blur");
+        blur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blurActionPerformed(evt);
+            }
+        });
+        jMenu4.add(blur);
+
+        motionblur.setText("Motion Blur");
+        motionblur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                motionblurActionPerformed(evt);
+            }
+        });
+        jMenu4.add(motionblur);
+
+        promedio.setText("Promedio");
+        promedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                promedioActionPerformed(evt);
+            }
+        });
+        jMenu4.add(promedio);
+
+        media.setText("Media");
+        media.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mediaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(media);
+
+        jMenuBar2.add(jMenu4);
+
+        jMenu6.setText("Compresión");
+
+        jMenu7.setText("Compresión");
+
+        losseless.setText("Losseless");
+        losseless.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                losselessActionPerformed(evt);
+            }
+        });
+        jMenu7.add(losseless);
+
+        lossy.setText("Lossy");
+        lossy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lossyActionPerformed(evt);
+            }
+        });
+        jMenu7.add(lossy);
+
+        jMenu6.add(jMenu7);
+
+        descompresión.setText("Descompresión");
+        descompresión.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descompresiónActionPerformed(evt);
+            }
+        });
+        jMenu6.add(descompresión);
+
+        jMenuBar2.add(jMenu6);
 
         setJMenuBar(jMenuBar2);
 
@@ -430,7 +589,7 @@ public class Vista extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -749,14 +908,6 @@ public class Vista extends javax.swing.JFrame {
             return;
         progreso.setText("Procesando...");
         String mensaje = JOptionPane.showInputDialog("Mensaje: ");
-        Object tipo = JOptionPane.showInputDialog(null, "Selecciona tipo: ", 
-                null, JOptionPane.QUESTION_MESSAGE, null, new Object[] { 
-                    "Color", "Negro"}, "Color");
-        int t = 0;
-        if (tipo.equals("Color"))
-            t = Procesador.COLOR;
-        if (tipo.equals("Negro"))
-            t = Procesador.BLACK;
         Object region = JOptionPane.showInputDialog(null, "Selecciona región", 
                 null, JOptionPane.QUESTION_MESSAGE, null, new Object[] { 
                     "Superior Izquierda", "Superior Derecha", 
@@ -770,7 +921,7 @@ public class Vista extends javax.swing.JFrame {
             r = Procesador.INF_IZQ;
         if (region.equals("Inferior Derecha"))
             r = Procesador.INF_DER;
-        img.setIcon(new ImageIcon(procesador.marcaAgua(mensaje,r,t).getScaledInstance(
+        img.setIcon(new ImageIcon(procesador.marcaAgua(mensaje,r).getScaledInstance(
                 img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
         progreso.setText("Filtro aplicado");
     }//GEN-LAST:event_marcaAguaActionPerformed
@@ -849,6 +1000,234 @@ public class Vista extends javax.swing.JFrame {
         progreso.setText("Filtro aplicado");
     }//GEN-LAST:event_hombresNegroActionPerformed
 
+    private void recurwscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recurwscActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        String op = JOptionPane.showInputDialog("Ancho: ");
+        int x = Integer.parseInt(op);
+        op = JOptionPane.showInputDialog("Altura: ");
+        int y = Integer.parseInt(op);
+        op = JOptionPane.showInputDialog("Nombre del archivo HTML: ");
+        try {
+            File nuevo = new File("");
+            String n = nuevo.getCanonicalPath();
+            nuevo = new File(String.format("%s/imagenes", n));
+            nuevo.mkdir();
+        } catch (IOException e) { }
+        String ruta = String.format("imagenes/%s.html", op);
+        FileWriter archivo = null;
+        PrintWriter pw = null;
+        try {
+            archivo = new FileWriter(ruta);
+            pw = new PrintWriter(archivo);
+            pw.println(procesador.recursivaWSC(x, y));
+        } catch (IOException e) {
+        } finally {
+            try {
+                if (null != archivo)
+                    archivo.close();
+            } catch(IOException e) { }
+        }
+        abreURL(ruta);
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_recurwscActionPerformed
+
+    private void bordeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bordeActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        img.setIcon(new ImageIcon(procesador.borde().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_bordeActionPerformed
+
+    private void sharpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sharpenActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        img.setIcon(new ImageIcon(procesador.sharpen().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_sharpenActionPerformed
+
+    private void blurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blurActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        img.setIcon(new ImageIcon(procesador.blur().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_blurActionPerformed
+
+    private void motionblurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_motionblurActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        img.setIcon(new ImageIcon(procesador.motionBlur().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_motionblurActionPerformed
+
+    private void promedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promedioActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        img.setIcon(new ImageIcon(procesador.promedio().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_promedioActionPerformed
+
+    private void mediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mediaActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        double[][] filter = {{1,1,1},{1,1,1},{1,1,1}};
+        img.setIcon(new ImageIcon(procesador.media(filter).getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_mediaActionPerformed
+
+    private void oleobnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oleobnActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        procesador.grisesAverage();
+        img.setIcon(new ImageIcon(procesador.oleo().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_oleobnActionPerformed
+
+    private void oleocolorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oleocolorActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        img.setIcon(new ImageIcon(procesador.oleo().getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_oleocolorActionPerformed
+
+    private void fotomosaicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotomosaicosActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        String op = JOptionPane.showInputDialog("Ancho: ");
+        int x = Integer.parseInt(op);
+        op = JOptionPane.showInputDialog("Altura: ");
+        int y = Integer.parseInt(op);
+        File carpeta = new File("");
+        JFileChooser selector = new JFileChooser();
+        selector.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int aux = selector.showOpenDialog(null);
+        if (aux == JFileChooser.APPROVE_OPTION) {
+            carpeta = selector.getSelectedFile();
+        }
+        String ruta = carpeta.getPath();
+        op = JOptionPane.showInputDialog("Nombre del archivo HTML: ");
+        ruta = String.format("%s/%s.html", ruta, op);
+        FileWriter archivo = null;
+        PrintWriter pw = null;
+        try {
+            archivo = new FileWriter(ruta);
+            pw = new PrintWriter(archivo);
+            pw.println(procesador.fotoMosaicos(x, y, carpeta));
+        } catch (IOException e) {
+        } finally {
+            try {
+                if (null != archivo)
+                    archivo.close();
+            } catch(IOException e) { }
+        }
+        abreURL(ruta);
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_fotomosaicosActionPerformed
+
+    private void reduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reduccionActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        int s = sliderReduccion();
+        int x = 0;
+        int y = 0;
+        System.out.println(s);
+        if (s != 0) {
+            x = imagen.getWidth() / (100 / s);
+            y = imagen.getHeight() / (100 / s);
+        }
+        img.setIcon(new ImageIcon(procesador.amplia(x,y).getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_reduccionActionPerformed
+
+    private void ampliacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ampliacionActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        int s = sliderReduccion();
+        int x = 0;
+        int y = 0;
+        System.out.println(s);
+        if (s != 0) {
+            x = imagen.getWidth() * (100 / s);
+            y = imagen.getHeight() * (100 / s);
+        }
+        img.setIcon(new ImageIcon(procesador.amplia(x,y).getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_ampliacionActionPerformed
+
+    private void losselessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_losselessActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        String op = JOptionPane.showInputDialog("Nombre del archivo binario: ");
+        String ruta = String.format("%s.data", op);
+        procesador.comprimeLosseless(ruta);
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_losselessActionPerformed
+
+    private void rotamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rotamatActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        int s = JOptionPane.showOptionDialog(null, "Selecciona una opción: ", 
+                null, JOptionPane.YES_NO_CANCEL_OPTION, 
+                JOptionPane.QUESTION_MESSAGE, null, new Object[] {"0°", 
+                    "90°", "180°", "270°"}, "0°");
+        int g = s * 90;
+        img.setIcon(new ImageIcon(procesador.rotaMatriz(g).getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_rotamatActionPerformed
+
+    private void descompresiónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descompresiónActionPerformed
+        progreso.setText("Procesando...");
+        File file = archivo();
+        img.setIcon(new ImageIcon(procesador.descomprime(file).getScaledInstance(
+                img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT)));
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_descompresiónActionPerformed
+
+    private void lossyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lossyActionPerformed
+        if (imagen == null)
+            return;
+        progreso.setText("Procesando...");
+        String op = JOptionPane.showInputDialog("Nombre del archivo binario: ");
+        String ruta = String.format("%s.data", op);
+        Object seleccion = JOptionPane.showInputDialog(null, 
+                "Selecciona color: ", null, JOptionPane.QUESTION_MESSAGE, null, 
+                new Object[] { "Rojo", "Verde", "Azul"}, "Rojo");
+        int s = -1;
+        if (seleccion.equals("Rojo"))
+            s = 0;
+        if (seleccion.equals("Verde"))
+            s = 1;
+        if (seleccion.equals("Azul"))
+            s = 2;
+        procesador.comprimeLossy(ruta, s);
+        progreso.setText("Filtro aplicado");
+    }//GEN-LAST:event_lossyActionPerformed
+
     /* AUXILIAR PARA REINICIAR LA IMAGEN. */
     private void reinicia() {
         copia = procesador.copia();
@@ -909,6 +1288,20 @@ public class Vista extends javax.swing.JFrame {
         return (int)op.getInputValue();
     }
     
+    /* SLIDER PARA REDUCCIÓN DE IMÁGENES. */
+    private int sliderReduccion() {
+        JFrame parent = new JFrame();
+        JOptionPane op = new JOptionPane();
+        JSlider slider = getSlider(op, 0, 100, 25);
+        slider.setValue(0);
+        op.setMessage(new Object[] {"Porcentaje: ", slider});
+        op.setMessageType(JOptionPane.QUESTION_MESSAGE);
+        op.setOptionType(JOptionPane.OK_CANCEL_OPTION);
+        JDialog dialog = op.createDialog(parent, "Porcentajes");
+        dialog.setVisible(true);
+        return (int)op.getInputValue();
+    }
+    
     /* AUXILIAR PARA CREAR SLIDERS. */
     private JSlider getSlider(final JOptionPane op, int min, int max, int esp) {
         JSlider slider = new JSlider(min, max);
@@ -962,6 +1355,21 @@ public class Vista extends javax.swing.JFrame {
         return otra;
     }
     
+    /* AUXILIAR PARA ESCOGER UN ARCHIVO. */
+    private File archivo() {
+        JFileChooser selector = new JFileChooser();
+        selector.setDialogTitle("Selecciona una imagen");
+        FileNameExtensionFilter filtro =
+                new FileNameExtensionFilter("data", "data");
+        selector.setFileFilter(filtro);
+        int aux = selector.showOpenDialog(null);
+        File file = null;
+        if (aux == JFileChooser.APPROVE_OPTION) {
+            file = selector.getSelectedFile();
+        }
+        return file;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1000,13 +1408,18 @@ public class Vista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem abrir;
     private javax.swing.JMenuItem altoContraste;
+    private javax.swing.JMenuItem ampliacion;
     private javax.swing.JMenuItem att;
     private javax.swing.JMenuItem azar;
     private javax.swing.JMenuItem azul;
     private javax.swing.JMenuItem blending;
+    private javax.swing.JMenuItem blur;
+    private javax.swing.JMenuItem borde;
     private javax.swing.JMenuItem brillo;
     private javax.swing.JMenuItem creadorIconos;
+    private javax.swing.JMenuItem descompresión;
     private javax.swing.JMenuItem favicon;
+    private javax.swing.JMenuItem fotomosaicos;
     private javax.swing.JMenuItem grisesDesaturation;
     private javax.swing.JMenuItem grisesDescomposition;
     private javax.swing.JMenuItem grisesDithering;
@@ -1021,11 +1434,17 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem losseless;
+    private javax.swing.JMenuItem lossy;
     private javax.swing.JMenuItem luzNegra;
     private javax.swing.JMenuItem marcaAgua;
+    private javax.swing.JMenuItem media;
     private javax.swing.JMenu menu_ajusteDeColor;
     private javax.swing.JMenu menu_archivo;
     private javax.swing.JMenu menu_artisticos;
@@ -1036,14 +1455,22 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JMenu menu_mosaicos;
     private javax.swing.JMenu menu_rotar;
     private javax.swing.JMenuItem mosaico;
+    private javax.swing.JMenuItem motionblur;
+    private javax.swing.JMenuItem oleobn;
+    private javax.swing.JMenuItem oleocolor;
     private javax.swing.JTextField progreso;
+    private javax.swing.JMenuItem promedio;
     private javax.swing.JMenuItem recursivas;
+    private javax.swing.JMenuItem recurwsc;
+    private javax.swing.JMenuItem reduccion;
     private javax.swing.JMenuItem reiniciar;
     private javax.swing.JMenuItem rgb;
     private javax.swing.JMenuItem rojo;
+    private javax.swing.JMenuItem rotamat;
     private javax.swing.JMenuItem rotar;
     private javax.swing.JMenuItem semitonos;
     private javax.swing.JMenuItem sepia;
+    private javax.swing.JMenuItem sharpen;
     private javax.swing.JMenuItem sopaLetras;
     private javax.swing.JMenuItem verde;
     // End of variables declaration//GEN-END:variables

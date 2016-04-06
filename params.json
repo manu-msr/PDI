@@ -1,0 +1,6 @@
+{
+  "name": "Procesador de Imágenes",
+  "tagline": "Repositorio con los filtros y proyecto del curso de Proceso Digital de Imágenes, semestre 2016-1",
+  "body": "### ¿Qué es un procesador de Imágenes?\r\nEs un programa que aplica un conjunto de técnicas a imágenes ditiales con el objetivo de mejorar la calidad o falicitar la búsqueda de información.\r\n\r\n### ¿Cómo se aplica un filtro?\r\nUna imagen está formada por pixeles y cada pixel, en esencia está formado por tres componentes de color: Una roja, una verde y una azul (R,G,B pos sus iniciales en inglés). Al combinar estas componentes podemos obtener prácticamente cualquier color. Al aplicar un filtro de modifican estas componenten con el fin de mejorar la calidad de la imagen o facilitar la búsqueda de información.\r\n\r\n### ¿Qué filtros tiene implementados este programa?\r\nEste programa incluye filtros sencillos para modificar el color, filtros de escala de grises, para girar imágenes, aplicar reducir, crear favicones, fotos recursivas, foto mosaicos, óleo y demás filtros artísticos.\r\n\r\n### Autor\r\nManuel Soto Romero (@manu-msr).\r\nLicenciatura en Ciencias de la Computación\r\nUniversidad Nacional Autónoma de México\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
